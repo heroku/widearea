@@ -51,10 +51,10 @@
    * @api private
    * @method _saveToStorage
    */
-  function _saveToStorage(id, value) {
-    //save textarea data in localStorage
-    localStorage.setItem(this._options.autoSaveKeyPrefix + id, value);
-  }
+  // function _saveToStorage(id, value) {
+  //   //save textarea data in localStorage
+  //   localStorage.setItem(this._options.autoSaveKeyPrefix + id, value);
+  // }
 
   /**
    * Get data from storage
@@ -62,9 +62,9 @@
    * @api private
    * @method _getFromStorage
    */
-  function _getFromStorage(id) {
-    return localStorage.getItem(this._options.autoSaveKeyPrefix + id);
-  }
+  // function _getFromStorage(id) {
+  //   return localStorage.getItem(this._options.autoSaveKeyPrefix + id);
+  // }
 
   /**
    * Clear specific textarea data from storage
@@ -148,12 +148,12 @@
       wideAreaIcons.setAttribute("id", "widearea-" + this._wideAreaId);
 
       //Autosaving
-      if (_getFromStorage.call(this, this._wideAreaId)) {
-        currentTextArea.value = _getFromStorage.call(this, this._wideAreaId);
-      }
+      // if (_getFromStorage.call(this, this._wideAreaId)) {
+      //   currentTextArea.value = _getFromStorage.call(this, this._wideAreaId);
+      // }
 
       var onTextChanged = function () {
-        _saveToStorage.call(self, this.getAttribute('data-widearea-id'), this.value);
+        // _saveToStorage.call(self, this.getAttribute('data-widearea-id'), this.value);
       };
       //add textchange listener
       if (currentTextArea.addEventListener) {
@@ -347,7 +347,7 @@
     currentTextArea.value = targetTextarea.value;
 
     var onTextChanged = function () {
-      _saveToStorage.call(self, this.getAttribute('data-widearea-id'), this.value);
+      // _saveToStorage.call(self, this.getAttribute('data-widearea-id'), this.value);
     };
     //add textchange listener
     if (currentTextArea.addEventListener) {
